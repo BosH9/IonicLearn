@@ -15,7 +15,7 @@
     </ion-header>
     <ion-content>
         <ion-list>
-            <ion-item *ngFor='let p of pages' (click)="gotoPage(p)">
+            <ion-item *ngFor='let p of pages' (click)="gotoPage(p)" menuToggle>
                 {{p.title}}
             </ion-item>
         </ion-list>

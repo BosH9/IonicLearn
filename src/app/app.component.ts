@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { TimerAppPage } from '../pages/timer-app/timer-app';
+import { CameraAppPage } from '../pages/camera-app/camera-app';
+import { GooglemapPage } from '../pages/googlemap/googlemap';
 import { IonicPage } from 'ionic-angular';
 
 
@@ -22,7 +24,10 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Timer', component: TimerAppPage }
+      { title: 'Timer', component: TimerAppPage },
+      { title: 'Camera', component: CameraAppPage },
+      { title: 'Map', component: GooglemapPage },
+      
     ];
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
