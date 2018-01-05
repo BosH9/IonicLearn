@@ -7,12 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>googlemap</ion-title>
-  </ion-navbar>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Ionic - Learn - Google map
+      </ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
 <div style="background:transparent;height:300px;width:100%;" id="map_canvas"></div>
+<div >
+    <button class="btnZoomOut" ion-button (click)="zoomOut()">Zoom Out -</button>
+    <button class="btnZoomIn" ion-button (click)="zoomIn()">Zoom In +</button>
+  <button ion-button (click)="findme()">Find me !!!</button>
+  <button ion-button (click)="addCircle()">Circle Demo !!!</button>
+  
+
+</div>
 </ion-content>

@@ -15,7 +15,7 @@ import { IonicPage } from 'ionic-angular';
 })
 export class MyApp {
   @ViewChild('mycontent') nav: NavController
-  rootPage:any = HomePage;
+  rootPage:any = GooglemapPage;
   pages: Array<{title: string, component: any}>;
 
 
