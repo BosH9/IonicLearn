@@ -13,6 +13,9 @@ import { HomePage } from '../pages/home/home';
 import { TimerAppPage } from '../pages/timer-app/timer-app';
 import { CameraAppPage } from '../pages/camera-app/camera-app';
 import { GooglemapPage } from '../pages/googlemap/googlemap';
+import { LifeCyCleEventsPage } from '../pages/life-cy-cle-events/life-cy-cle-events';
+import { ProfileaddPage } from '../pages/profileadd/profileadd';
+
 import {
   GoogleMaps,
   GoogleMap,
@@ -30,7 +33,9 @@ import {
     HomePage,
     TimerAppPage,
     CameraAppPage,
-    GooglemapPage
+    GooglemapPage,
+    LifeCyCleEventsPage,
+    ProfileaddPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,9 @@ import {
     HomePage,
     TimerAppPage,
     CameraAppPage,
-    GooglemapPage
+    GooglemapPage,
+    LifeCyCleEventsPage,
+    ProfileaddPage
   ],
   providers: [
     StatusBar,

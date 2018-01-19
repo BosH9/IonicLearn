@@ -7,7 +7,10 @@ import { HomePage } from '../pages/home/home';
 import { TimerAppPage } from '../pages/timer-app/timer-app';
 import { CameraAppPage } from '../pages/camera-app/camera-app';
 import { GooglemapPage } from '../pages/googlemap/googlemap';
+import { LifeCyCleEventsPage } from '../pages/life-cy-cle-events/life-cy-cle-events';
 import { IonicPage } from 'ionic-angular';
+import { ProfileaddPage } from '../pages/profileadd/profileadd';
+
 
 
 @Component({
@@ -15,7 +18,7 @@ import { IonicPage } from 'ionic-angular';
 })
 export class MyApp {
   @ViewChild('mycontent') nav: NavController
-  rootPage:any = GooglemapPage;
+  rootPage:any = ProfileaddPage;
   pages: Array<{title: string, component: any}>;
 
 
@@ -27,6 +30,8 @@ export class MyApp {
       { title: 'Timer', component: TimerAppPage },
       { title: 'Camera', component: CameraAppPage },
       { title: 'Map', component: GooglemapPage },
+      { title: 'Life Cycle', component: LifeCyCleEventsPage },
+      { title: 'Registration', component: ProfileaddPage },
       
     ];
     platform.ready().then(() => {
