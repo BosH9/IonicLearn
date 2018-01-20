@@ -15,35 +15,60 @@
 
 
 <ion-content padding>
-    <ion-avatar>
-        <img name='image' src="assets/imgs/Avatar.jpg" class="img-center-round">
-      </ion-avatar>
-      
-  <ion-label text-center for='image'><u>browse</u></ion-label>
-<ion-list>
-   <ion-item>
-    <ion-label floating>NAME</ion-label>
-    <ion-input type='text'></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>DATE OF BIRTH</ion-label>
-    <ion-datetime displayFormat='MM/DD/YYYY'></ion-datetime>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>ADDRESS</ion-label>
-    <ion-input type='text'></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>CITY</ion-label>
-    <ion-select>
-      <ion-option value='Hyderabad' selected='true'>Hyderabad</ion-option>
-      <ion-option value='Banglore' >Bangalore</ion-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-      <ion-checkbox ></ion-checkbox><ion-label>I agree to <u>conditions</u></ion-label>
-  </ion-item>
-</ion-list>
+  
 
-<button ion-button block class="submit-button">SUBMIT</button>
+  <ion-avatar>
+    <img name='image' src="assets/imgs/Avatar.jpg" class="img-center-round">
+  </ion-avatar>
+
+  <ion-label text-center for='image'>
+    <u>browse</u>
+  </ion-label>
+  <ion-toggle [(ngModel)]="gender" color="danger"></ion-toggle>
+
+  <ion-row radio-group [(ngModel)]="gender">
+      <ion-col>
+        <ion-item no-lines>
+          <ion-radio value="male" ion-start></ion-radio>
+          <ion-label><ion-icon ios="ios-man" md="md-man" ion-start width="50"></ion-icon> Male </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item no-lines>
+          <ion-radio value="female"></ion-radio>
+  
+  <ion-label><ion-icon ios="ios-woman" md="md-woman" ion-end></ion-icon> Female</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>NAME</ion-label>
+      <ion-input type='text'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>DATE OF BIRTH</ion-label>
+      <ion-datetime displayFormat='MM/DD/YYYY'></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>ADDRESS</ion-label>
+      <ion-input type='text'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>CITY</ion-label>
+      <ion-select>
+        <ion-option value='Hyderabad' selected='true'>Hyderabad</ion-option>
+        <ion-option value='Banglore'>Bangalore</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox></ion-checkbox>
+      <ion-label>I agree to
+        <u>conditions</u>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block class="submit-button">SUBMIT</button>
 </ion-content>
