@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { User } from '../../user';
 
 
@@ -15,22 +16,32 @@ import { User } from '../../user';
   templateUrl: 'profileadd.html',
 })
 export class ProfileaddPage {
-  public user:User;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alrtCtrl:AlertController) {
-    this.user=new User();
+  public user: User;
+  private regForm:FormGroup;
+  private submitClicked:boolean;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alrtCtrl: AlertController,
+  private formBuilder:FormBuilder) {
+    this.user = new User();
+    this.regForm=this.formBuilder.group({
+      name:['',Validators.required],
+      dob:['',Validators.required],
+      gender:['',Validators.required],
+      address:['',Validators.required]
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfileaddPage');
   }
-  save(){
-    console.log(this.user);
+  save() {
+    this.submitClicked=true;
+    console.log(this.regForm.value);
   }
-  showConditions(){
+  showConditions() {
     let alrt = this.alrtCtrl.create({
-      title:'Terms',
-      subTitle:'1) You are 18 years old or more<br>2) You should be indian citizen<br>3) Another rule',
-      buttons:['OK']
+      title: 'Terms',
+      subTitle: '1) You are 18 years old or more<br>2) You should be indian citizen<br>3) Another rule',
+      buttons: ['OK']
     });
     alrt.present();
   }

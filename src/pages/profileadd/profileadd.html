@@ -16,7 +16,7 @@
 
 <ion-content padding>
 
-<form [formGroup]="registrationForm" (ngSubmit)="save()">
+<form [formGroup]="regForm" (ngSubmit)="save()">
   <ion-avatar>
     <img name='image' src="assets/imgs/Avatar.jpg" class="img-center-round">
   </ion-avatar>
@@ -26,7 +26,7 @@
   </ion-label>
   <!-- <ion-toggle [(ngModel)]="gender" color="danger"></ion-toggle> -->
 
-  <ion-row radio-group [(ngModel)]="user.gender">
+  <ion-row radio-group formControllerName="gender">
     <ion-col>
       <ion-item no-lines>
         <ion-radio value="male" ion-start></ion-radio>
@@ -44,22 +44,25 @@
     </ion-col>
   </ion-row>
 
-  <ion-list>
+  <ion-list no-lines>
     <ion-item>
       <ion-label floating>NAME</ion-label>
-      <ion-input type='text' [(ngModel)]="user.name"></ion-input>
+      <ion-input type='text' formControllerName="name" [class.invalid]="!regForm.controls.name.valid  && (regForm.controls.name.dirty || submitClicked)"></ion-input>
     </ion-item>
+    <ion-item *ngIf="!regForm.controls.name.valid && (regForm.controls.name.touched || submitClicked)">
+      <p>Please enter a valid name.</p>
+  </ion-item>
     <ion-item>
       <ion-label floating>DATE OF BIRTH</ion-label>
-      <ion-datetime displayFormat='MM/DD/YYYY' [(ngModel)]="user.dob"></ion-datetime>
+      <ion-datetime displayFormat='MM/DD/YYYY' formControllerName="dob"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label floating>ADDRESS</ion-label>
-      <ion-input type='text' [(ngModel)]="user.address"></ion-input>
+      <ion-input type='text' formControllerName="address"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>CITY</ion-label>
-      <ion-select [(ngModel)]="user.city">
+      <ion-select formControllerName="city">
         <ion-option value='Hyderabad' selected='true'>Hyderabad</ion-option>
         <ion-option value='Banglore'>Bangalore</ion-option>
       </ion-select>
@@ -74,6 +77,6 @@
       <a href="#" (click)="showConditions()">the terms</a></span>
     </li>
   
-  <button ion-button block class="submit-button">SUBMIT</button>
+  <button type="submit" ion-button block class="submit-button">SUBMIT</button>
 </form>
 </ion-content>
