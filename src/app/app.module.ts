@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { Camera } from '@ionic-native/camera';
 import { LocalNotifications } from '@ionic-native/local-notifications';
-
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -41,7 +41,8 @@ import {
     BrowserModule,
     IonicModule.forRoot(MyApp,{
       menuType:'push'
-    })
+    }),
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -22,11 +22,14 @@ export class ProfileaddPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public alrtCtrl: AlertController,
   private formBuilder:FormBuilder) {
     this.user = new User();
+    this.submitClicked=false;
+    
     this.regForm=this.formBuilder.group({
       name:['',Validators.required],
       dob:['',Validators.required],
       gender:['',Validators.required],
-      address:['',Validators.required]
+      address:['',Validators.required],
+      city:['',Validators.required]
     });
   }
 

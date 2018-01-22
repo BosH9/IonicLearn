@@ -16,67 +16,76 @@
 
 <ion-content padding>
 
-<form [formGroup]="regForm" (ngSubmit)="save()">
-  <ion-avatar>
-    <img name='image' src="assets/imgs/Avatar.jpg" class="img-center-round">
-  </ion-avatar>
+  <form [formGroup]="regForm" (ngSubmit)="save(regForm.value)" novalidate>
+    <ion-avatar>
+      <img name='image' src="assets/imgs/Avatar.jpg" class="img-center-round">
+    </ion-avatar>
 
-  <ion-label text-center for='image'>
-    <u>browse</u>
-  </ion-label>
-  <!-- <ion-toggle [(ngModel)]="gender" color="danger"></ion-toggle> -->
+    <ion-label text-center for='image'>
+      <u>browse</u>
+    </ion-label>
+    <!-- <ion-toggle [(ngModel)]="gender" color="danger"></ion-toggle> -->
 
-  <ion-row radio-group formControllerName="gender">
-    <ion-col>
-      <ion-item no-lines>
-        <ion-radio value="male" ion-start></ion-radio>
-        <ion-label>
-          <ion-icon ios="ios-man" md="md-man" ion-start width="50"></ion-icon> Male </ion-label>
-      </ion-item>
-    </ion-col>
-    <ion-col>
-      <ion-item no-lines>
-        <ion-radio value="female"></ion-radio>
-
-        <ion-label>
-          <ion-icon ios="ios-woman" md="md-woman" ion-end></ion-icon> Female</ion-label>
-      </ion-item>
-    </ion-col>
-  </ion-row>
-
-  <ion-list no-lines>
     <ion-item>
-      <ion-label floating>NAME</ion-label>
-      <ion-input type='text' formControllerName="name" [class.invalid]="!regForm.controls.name.valid  && (regForm.controls.name.dirty || submitClicked)"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="!regForm.controls.name.valid && (regForm.controls.name.touched || submitClicked)">
-      <p>Please enter a valid name.</p>
+    <ion-row lines radio-group formControlName="gender" [class.invalid]="!regForm.controls.gender.valid  && (regForm.controls.gender.dirty || submitClicked)">
+      <ion-col>
+        <ion-item >
+          <ion-radio value="male" ion-start></ion-radio>
+          <ion-label>
+            <ion-icon ios="ios-man" md="md-man" ion-start width="50"></ion-icon> Male </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item >
+          <ion-radio value="female"></ion-radio>
+
+          <ion-label>
+            <ion-icon ios="ios-woman" md="md-woman" ion-end></ion-icon> Female</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
   </ion-item>
-    <ion-item>
-      <ion-label floating>DATE OF BIRTH</ion-label>
-      <ion-datetime displayFormat='MM/DD/YYYY' formControllerName="dob"></ion-datetime>
+    <ion-item style="padding-left:16px;" *ngIf="!regForm.controls.gender.valid  && (regForm.controls.gender.dirty || submitClicked)" no-lines>
+      <p>Please select gender.</p>
     </ion-item>
-    <ion-item>
-      <ion-label floating>ADDRESS</ion-label>
-      <ion-input type='text' formControllerName="address"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>CITY</ion-label>
-      <ion-select formControllerName="city">
-        <ion-option value='Hyderabad' selected='true'>Hyderabad</ion-option>
-        <ion-option value='Banglore'>Bangalore</ion-option>
-      </ion-select>
-    </ion-item>
-    
-  </ion-list>
-  <li class="item item-checkbox" style="height:60px;list-style: none;border-top: 1px solid #ddd;">
-      <div  class="checkbox">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>NAME</ion-label>
+        <ion-input type='text' formControlName="name" [class.invalid]="!regForm.controls.name.valid  && (regForm.controls.name.dirty || submitClicked)"></ion-input>
+      </ion-item>
+      {{regForm.controls.value}}
+      <ion-item *ngIf="!regForm.controls.name.valid  && (regForm.controls.name.dirty || submitClicked)" no-lines>
+        <p>Please enter name.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>DATE OF BIRTH</ion-label>
+        <ion-datetime displayFormat='MM/DD/YYYY' formControlName="dob" [class.invalid]="!regForm.controls.dob.valid  && (regForm.controls.dob.dirty || submitClicked)"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="!regForm.controls.dob.valid && (regForm.controls.dob.dirty || submitClicked)" no-lines>
+        <p>Please enter date of birth.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>ADDRESS</ion-label>
+        <ion-input type='text' formControlName="address" [class.invalid]="!regForm.controls.address.valid  && (regForm.controls.address.dirty || submitClicked)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>CITY</ion-label>
+        <ion-select formControlName="city" [class.invalid]="!regForm.controls.city.valid  && (regForm.controls.city.dirty || submitClicked)">
+          <ion-option value='Hyderabad' selected='true'>Hyderabad</ion-option>
+          <ion-option value='Banglore'>Bangalore</ion-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+    <li class="item item-checkbox" style="height:60px;list-style: none;border-top: 1px solid #ddd;">
+      <div class="checkbox">
         <input id="terms" name="terms" type="checkbox">
       </div>
       <span for="terms">I agree to
-      <a href="#" (click)="showConditions()">the terms</a></span>
+        <a href="#" (click)="showConditions()">the terms</a>
+      </span>
     </li>
-  
-  <button type="submit" ion-button block class="submit-button">SUBMIT</button>
-</form>
+
+    <button type="submit" ion-button block class="submit-button">SUBMIT</button>
+  </form>
 </ion-content>
