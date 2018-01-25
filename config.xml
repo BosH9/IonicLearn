@@ -3,7 +3,7 @@
     <name>IonicLearn</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://191.168.0.176:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -90,4 +90,5 @@
     <plugin name="cordova-plugin-googlemaps" spec="^2.1.1">
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBJK8WlZq9Xd4L-pSAU1fXCvAoBvjYHiZg" />
     </plugin>
+    <plugin name="cordova-sqlite-storage" spec="^2.2.0" />
 </widget>

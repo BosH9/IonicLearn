@@ -10,6 +10,7 @@ import { GooglemapPage } from '../pages/googlemap/googlemap';
 import { LifeCyCleEventsPage } from '../pages/life-cy-cle-events/life-cy-cle-events';
 import { IonicPage } from 'ionic-angular';
 import { ProfileaddPage } from '../pages/profileadd/profileadd';
+import { UsersPage } from '../pages/users/users';
 
 
 
@@ -32,6 +33,7 @@ export class MyApp {
       { title: 'Map', component: GooglemapPage },
       { title: 'Life Cycle', component: LifeCyCleEventsPage },
       { title: 'Registration', component: ProfileaddPage },
+      { title: 'User', component: UsersPage },
       
     ];
     platform.ready().then(() => {

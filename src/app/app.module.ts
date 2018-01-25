@@ -7,6 +7,7 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { Camera } from '@ionic-native/camera';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -25,6 +26,7 @@ import {
   MarkerOptions,
   Marker
  } from '@ionic-native/google-maps';
+import { UsersPage } from '../pages/users/users';
 
 
 @NgModule({
@@ -35,13 +37,15 @@ import {
     CameraAppPage,
     GooglemapPage,
     LifeCyCleEventsPage,
-    ProfileaddPage
+    ProfileaddPage,
+    UsersPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp,{
       menuType:'push'
     }),
+    IonicStorageModule.forRoot(),
     ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
@@ -52,7 +56,8 @@ import {
     CameraAppPage,
     GooglemapPage,
     LifeCyCleEventsPage,
-    ProfileaddPage
+    ProfileaddPage,
+    UsersPage
   ],
   providers: [
     StatusBar,
