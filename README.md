@@ -2,9 +2,9 @@
 
 This project is for learning Ionic 3.
 
-Sources:
+Sources:<br>
 https://www.joshmorony.com/advanced-forms-validation-in-ionic-2/
-https://blog.ionicframework.com/navigating-lifecycle-events/
+<br>https://blog.ionicframework.com/navigating-lifecycle-events/
 
 Todo:
 1) Create Registration Page with saving functionalities.
