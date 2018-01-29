@@ -14,8 +14,11 @@
 
 
 <ion-content padding>
+  <ion-fab top right edge>
+    <button ion-fab mini><ion-icon name="add" (click)="addUser()"></ion-icon></button>
+  </ion-fab>
 <ion-list>
-  <ion-item>
+  <ion-item *ngFor="let user of users" (click)="editUser(user.rowid)">
     <ion-avatar item-start>
       <img src="{{user.image}}">
     </ion-avatar>

@@ -7,7 +7,10 @@ export class User{
     public city: string;
     public image: string;
     public dob: DateTime;
-
+    
+    public timestamp: DateTime;
+    public rowid: string;
+    
     public constructor(){
 
     }

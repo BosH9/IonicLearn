@@ -7,7 +7,9 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { Camera } from '@ionic-native/camera';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { IonicStorageModule } from '@ionic/storage';
+//import { IonicStorageModule } from '@ionic/storage';
+import { SQLite } from '@ionic-native/sqlite';
+import { Toast } from '@ionic-native/toast';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -45,7 +47,6 @@ import { UsersPage } from '../pages/users/users';
     IonicModule.forRoot(MyApp,{
       menuType:'push'
     }),
-    IonicStorageModule.forRoot(),
     ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
@@ -66,8 +67,9 @@ import { UsersPage } from '../pages/users/users';
     Camera,
     LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GoogleMaps
-    
+    GoogleMaps,
+    SQLite,
+    Toast
   ]
 })
 export class AppModule {}

@@ -91,4 +91,5 @@
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBJK8WlZq9Xd4L-pSAU1fXCvAoBvjYHiZg" />
     </plugin>
     <plugin name="cordova-sqlite-storage" spec="^2.2.0" />
+    <plugin name="cordova-plugin-x-toast" spec="^2.6.0" />
 </widget>
