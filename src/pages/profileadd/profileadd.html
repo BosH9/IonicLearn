@@ -84,6 +84,6 @@
       </span>
     </li>
 {{submitClicked}}
-    <button type="submit" ion-button block class="submit-button" [disabled]="submitClicked&&regForm.valid">SUBMIT</button>
+    <button type="submit" ion-button block class="submit-button" [disabled]="!regForm.valid">SUBMIT</button>
   </form>
 </ion-content>

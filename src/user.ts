@@ -8,7 +8,7 @@ export class User{
     public image: string;
     public dob: DateTime;
     
-    public timestamp: DateTime;
+    public timestamp: number;
     public rowid: string;
     
     public constructor(){

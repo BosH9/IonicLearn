@@ -19,7 +19,7 @@ import { UsersPage } from '../pages/users/users';
 })
 export class MyApp {
   @ViewChild('mycontent') nav: NavController
-  rootPage:any = ProfileaddPage;
+  rootPage:any = UsersPage;
   pages: Array<{title: string, component: any}>;
 
 
