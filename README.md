@@ -13,6 +13,10 @@ https://www.joshmorony.com/advanced-forms-validation-in-ionic-2/
 <br>http://momentjs.com/docs/#/use-it/typescript/
 <br>http://currentmillis.com/
 
+Angular Related Resources:<br>
+https://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/
+
+
 Todo:
 1) Create Registration Page with saving functionalities.
 2) Showing grid with view/edit, add to favourites.
