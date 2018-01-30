@@ -11,6 +11,7 @@ https://www.joshmorony.com/advanced-forms-validation-in-ionic-2/
 <br>http://technotip.com/5171/ionic-storage-ionic-2/
 <br>http://www.sqlitetutorial.net/sqlite-date/
 <br>http://momentjs.com/docs/#/use-it/typescript/
+<br>http://currentmillis.com/
 
 Todo:
 1) Create Registration Page with saving functionalities.
