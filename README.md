@@ -17,6 +17,8 @@ Angular Related Resources:<br>
 https://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/
 <br>https://toddmotto.com/angular-2-form-controls-patch-value-set-value
 
+Other:<br>
+http://mcgivery.com/
 
 Todo:
 1) Create Registration Page with saving functionalities.
