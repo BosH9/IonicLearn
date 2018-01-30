@@ -15,6 +15,7 @@ https://www.joshmorony.com/advanced-forms-validation-in-ionic-2/
 
 Angular Related Resources:<br>
 https://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/
+<br>https://toddmotto.com/angular-2-form-controls-patch-value-set-value
 
 
 Todo:
