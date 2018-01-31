@@ -88,7 +88,8 @@ export class ProfileaddPage {
               console.log(res);
               this.toast.show('Data saved', '5000', 'center').subscribe(
                 toast => {
-                  this.navCtrl.push(UsersPage);
+                  //this.navCtrl.push(UsersPage);
+                  this.navCtrl.popToRoot();
                 }
               );
             })
@@ -202,7 +203,7 @@ export class ProfileaddPage {
       name: 'ionicusersampledb.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      db.executeSql('UPDATE usersample SET name=?,city=?,address=?,dob=?,timestamp=?,gender=?,image=? WHERE rowid=?', [this.user.name, this.user.city, this.user.address, this.user.dob, this.user.timestamp, this.user.gender, this.base64Image, this.user.rowid])
+      db.executeSql('UPDATE usersample SET name=?,city=?,address=?,dob=?,gender=?,image=? WHERE rowid=?', [this.user.name, this.user.city, this.user.address, this.user.dob, this.user.gender, this.base64Image, this.user.rowid])
         .then(res => {
           console.log(res);
           this.toast.show('Details updated', '2000', 'center').subscribe(

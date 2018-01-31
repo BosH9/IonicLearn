@@ -2,6 +2,7 @@ import { Component,ViewChild } from '@angular/core';
 import { Platform, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { MomentjsPipe } from '../dateformatPipe';
 
 import { HomePage } from '../pages/home/home';
 import { TimerAppPage } from '../pages/timer-app/timer-app';

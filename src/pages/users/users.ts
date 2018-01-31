@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
+import { Toast } from '@ionic-native/toast';
 //import { Storage } from '@ionic/storage';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { User } from '../../user';
 import { ProfileaddPage } from '../profileadd/profileadd';
+import { MomentjsPipe } from '../../dateformatPipe';
 
 /**
  * Generated class for the UsersPage page.
@@ -19,27 +21,31 @@ import { ProfileaddPage } from '../profileadd/profileadd';
 export class UsersPage {
   user: User;
   users: User[];
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite,
+    private pltfrm: Platform, private toast: Toast) {
     this.user = new User();
 
     // let u = storage.get('user').then((val)=>{
     //   this.user=val;
     //   console.log(val);
     // });
-    
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UsersPage');
+    this.pltfrm.ready().then((rdy) => {
     this.getUserData();
+    });
   }
   ionViewWillEnter() {
     console.log('ionViewWillEnter UsersPage');
-    //this.getUserData();
+    this.getUserData();
   }
 
 
   getUserData() {
+
     this.sqlite.create({
       name: 'ionicusersampledb.db',
       location: 'default'
@@ -53,9 +59,9 @@ export class UsersPage {
         .then(res => {
           this.users = [];
           var u: User;
-          
+
           for (var i = 0; i < res.rows.length; i++) {
-            u=new User();
+            u = new User();
             u.name = res.rows.item(i).name;
             u.city = res.rows.item(i).city;
             u.address = res.rows.item(i).address;
@@ -63,7 +69,7 @@ export class UsersPage {
             u.image = res.rows.item(i).image;
             u.dob = res.rows.item(i).dob;
             u.timestamp = res.rows.item(i).timestamp;
-            u.rowid=res.rows.item(i).rowid;
+            u.rowid = res.rows.item(i).rowid;
             this.users.push(u);
           }
           console.log(this.users);
@@ -72,15 +78,16 @@ export class UsersPage {
     });
   }
 
-  addUser(){
+  addUser() {
     this.navCtrl.push(ProfileaddPage);
   }
 
-  editUser(rowidd){
-    this.navCtrl.push(ProfileaddPage,{rowid:rowidd});
+  editUser(rowidd) {
+    this.navCtrl.push(ProfileaddPage, { rowid: rowidd });
   }
 
-  reloadData(refresher){
+  reloadData(refresher) {
+    this.pltfrm.ready().then((rdy) => {
     this.sqlite.create({
       name: 'ionicusersampledb.db',
       location: 'default'
@@ -94,9 +101,9 @@ export class UsersPage {
         .then(res => {
           this.users = [];
           var u: User;
-          
+
           for (var i = 0; i < res.rows.length; i++) {
-            u=new User();
+            u = new User();
             u.name = res.rows.item(i).name;
             u.city = res.rows.item(i).city;
             u.address = res.rows.item(i).address;
@@ -104,18 +111,39 @@ export class UsersPage {
             u.image = res.rows.item(i).image;
             u.dob = res.rows.item(i).dob;
             u.timestamp = res.rows.item(i).timestamp;
-            u.rowid=res.rows.item(i).rowid;
+            u.rowid = res.rows.item(i).rowid;
             this.users.push(u);
           }
           console.log(this.users);
         })
         .catch(e => console.log(e));
-    }).then((x)=>{
+    }).then((x) => {
       setTimeout(() => {
         console.log('Async operation has ended');
         refresher.complete();
       }, 2000);
-    })
+    });
+  });
+  }
+
+  deleteUser(rowid){
+    this.pltfrm.ready().then((rdy) => {
+    this.sqlite.create({
+      name: 'ionicusersampledb.db',
+      location: 'default'
+    }).then((db: SQLiteObject) => {
+      db.executeSql('DELETE FROM usersample WHERE rowid=?', [rowid])
+        .then(res => {
+          this.toast.show('User deleted', '5000', 'center').subscribe(
+            toast => {
+              this.getUserData();
+            }
+          );
+          
+        })
+        .catch(e => console.log(e));
+    }).catch(e=> console.log(e));
+  });
   }
 
 }

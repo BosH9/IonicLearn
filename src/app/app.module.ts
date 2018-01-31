@@ -29,7 +29,7 @@ import {
   Marker
  } from '@ionic-native/google-maps';
 import { UsersPage } from '../pages/users/users';
-
+import { MainPipe } from '../main-pipe.module';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,8 @@ import { UsersPage } from '../pages/users/users';
     IonicModule.forRoot(MyApp,{
       menuType:'push'
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MainPipe
   ],
   bootstrap: [IonicApp],
   entryComponents: [
