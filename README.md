@@ -20,6 +20,11 @@ https://blog.angular-university.io/introduction-to-angular-2-forms-template-driv
 Other:<br>
 http://mcgivery.com/
 <br>https://api.randomuser.me/?results=10
+<br>
+
+Design:<br>
+https://dribbble.com/shots/2950232-Time-Off-App-Concept
+
 Todo:
 1) Create Registration Page with saving functionalities.
 2) Showing grid with view/edit, add to favourites.
