@@ -6,7 +6,7 @@ export class User{
     public gender: string;
     public city: string;
     public image: string;
-    public dob: DateTime;
+    public dob: string;
     
     public timestamp: number;
     public rowid: string;

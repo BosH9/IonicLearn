@@ -208,7 +208,8 @@ export class ProfileaddPage {
           console.log(res);
           this.toast.show('Details updated', '2000', 'center').subscribe(
             toast => {
-              this.navCtrl.push(UsersPage);
+              //this.navCtrl.push(UsersPage);
+              this.navCtrl.popToRoot();
             }
           );
         });

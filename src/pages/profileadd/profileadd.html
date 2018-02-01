@@ -77,13 +77,12 @@
     </ion-list>
     <li class="item item-checkbox" style="height:60px;list-style: none;border-top: 1px solid #ddd;">
       <div class="checkbox">
-        <input id="terms" name="terms" type="checkbox">
+        <input id="terms" name="terms" type="checkbox" required>
       </div>
       <span for="terms">I agree to
         <a href="#" (click)="showConditions()">the terms</a>
       </span>
     </li>
-{{submitClicked}}
     <button type="submit" ion-button block class="submit-button" [disabled]="!regForm.valid">SUBMIT</button>
   </form>
 </ion-content>

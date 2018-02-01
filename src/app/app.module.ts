@@ -30,6 +30,9 @@ import {
  } from '@ionic-native/google-maps';
 import { UsersPage } from '../pages/users/users';
 import { MainPipe } from '../main-pipe.module';
+import { CalendarModule } from 'ion2-calendar';
+import { TimeOffRequestPage } from '../pages/time-off-request/time-off-request';
+import { DatePicker } from '@ionic-native/date-picker';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { MainPipe } from '../main-pipe.module';
     GooglemapPage,
     LifeCyCleEventsPage,
     ProfileaddPage,
-    UsersPage
+    UsersPage,
+    TimeOffRequestPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { MainPipe } from '../main-pipe.module';
       menuType:'push'
     }),
     ReactiveFormsModule,
-    MainPipe
+    MainPipe,
+    CalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,7 +64,8 @@ import { MainPipe } from '../main-pipe.module';
     GooglemapPage,
     LifeCyCleEventsPage,
     ProfileaddPage,
-    UsersPage
+    UsersPage,
+    TimeOffRequestPage
   ],
   providers: [
     StatusBar,
@@ -70,7 +76,8 @@ import { MainPipe } from '../main-pipe.module';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GoogleMaps,
     SQLite,
-    Toast
+    Toast,
+    DatePicker
   ]
 })
 export class AppModule {}
