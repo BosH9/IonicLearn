@@ -13,6 +13,7 @@ import { IonicPage } from 'ionic-angular';
 import { ProfileaddPage } from '../pages/profileadd/profileadd';
 import { UsersPage } from '../pages/users/users';
 import { TimeOffRequestPage } from '../pages/time-off-request/time-off-request';
+import { LeavesPage } from '../pages/leaves/leaves';
 
 
 
@@ -38,6 +39,7 @@ export class MyApp {
       { title: 'Registration', component: ProfileaddPage },
       { title: 'User', component: UsersPage },
       { title: 'Request Leave', component: TimeOffRequestPage },
+      { title: 'Leaves', component: LeavesPage },
       
     ];
     platform.ready().then(() => {

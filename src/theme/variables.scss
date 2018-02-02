@@ -41,7 +41,8 @@ $colors: (
   dark:       #222,
   top:        #7babed,
   hash:       #ced6e3,
-  whte:       #ffffff
+  whte:       #ffffff,
+  calendar-yellow:#FDE69E
 );
 
 $font-30:(
@@ -96,3 +97,10 @@ $font-30:(
 
 // $checkbox-md-icon-background-color-on: #32db64;
 // $radio-md-color-on:#32db64;
+
+
+.between button.days-btn p{
+  color: #B2BEB5 !important;
+  font-size: 13px !important;
+  font-weight:bold !important;
+}

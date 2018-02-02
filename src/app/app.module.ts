@@ -7,7 +7,7 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { Camera } from '@ionic-native/camera';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-//import { IonicStorageModule } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage';
 import { SQLite } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
 
@@ -33,6 +33,7 @@ import { MainPipe } from '../main-pipe.module';
 import { CalendarModule } from 'ion2-calendar';
 import { TimeOffRequestPage } from '../pages/time-off-request/time-off-request';
 import { DatePicker } from '@ionic-native/date-picker';
+import { LeavesPage } from '../pages/leaves/leaves';
 
 @NgModule({
   declarations: [
@@ -44,16 +45,19 @@ import { DatePicker } from '@ionic-native/date-picker';
     LifeCyCleEventsPage,
     ProfileaddPage,
     UsersPage,
-    TimeOffRequestPage
+    TimeOffRequestPage,
+    LeavesPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp,{
       menuType:'push'
     }),
+    IonicStorageModule.forRoot(),
     ReactiveFormsModule,
     MainPipe,
-    CalendarModule
+    CalendarModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -65,7 +69,8 @@ import { DatePicker } from '@ionic-native/date-picker';
     LifeCyCleEventsPage,
     ProfileaddPage,
     UsersPage,
-    TimeOffRequestPage
+    TimeOffRequestPage,
+    LeavesPage
   ],
   providers: [
     StatusBar,
